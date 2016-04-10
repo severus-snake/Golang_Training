@@ -13,3 +13,7 @@ func main() {
 	}
 
 }
+
+//Exclamation point make each of the bools above the opposite of each other
+//!true is false
+//!false is true
