@@ -30,8 +30,11 @@ func SwitchOnType(x interface{}) {
 func main() {
 	SwitchOnType(7)
 	SwitchOnType("McLeod")
-	var t = contact{"Good to see you,", "Tim"}
+	t := contact{"Good to see you,", "Tim"}
 	SwitchOnType(t)
+	fmt.Println(t)
 	SwitchOnType(t.greeting)
+	fmt.Println(t.greeting)
 	SwitchOnType(t.name)
+	fmt.Println(t.name)
 }

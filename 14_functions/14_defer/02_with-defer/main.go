@@ -14,3 +14,5 @@ func main() {
 	defer world()
 	hello()
 }
+
+// defer makes a call to a function happen before the main function ends

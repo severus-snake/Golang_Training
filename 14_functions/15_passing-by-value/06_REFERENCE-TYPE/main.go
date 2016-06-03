@@ -13,3 +13,6 @@ func changeMe(z []string) {
 	z[0] = "Todd"
 	fmt.Println(z) // [Todd]
 }
+
+// A slice is a reference type, if you change a value of a reference type
+// it will also change the value at it's memory address

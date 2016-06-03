@@ -12,6 +12,8 @@ func changeMe(z map[string]int) {
 	z["Todd"] = 44
 }
 
+// A map is a reference type, if you change a value of a reference type
+// it will also change the value at it's memory address
 /*
 Allocation with make
 Back to allocation. The built-in function make(T, args)

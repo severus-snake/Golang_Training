@@ -12,3 +12,5 @@ func factorial(x int) int {
 func main() {
 	fmt.Println(factorial(4))
 }
+
+// Recursion is when a function calls itself
