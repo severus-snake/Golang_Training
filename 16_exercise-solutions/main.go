@@ -290,7 +290,7 @@ func zombieAI(mode int) {
 	}
 }
 
-func playerAI(mode int) {
+//func playerAI(mode int) {
 	//TODO: optional!
 	//Similar to the zombie AI, implement an AI for the player
 	//Which is activated by a certain input, which you can define
@@ -303,13 +303,13 @@ func playerAI(mode int) {
 	//		determine the BEST zombie to shoot at / move towards
 	//This will likely require defining some extra functions for doing things like
 	//detecting when zombies are in range, and in which direction
-	switch mode {
-		case playerSimpleAI:
+	//switch mode {
+		//case playerSimpleAI:
 
-		case playerRandomAI:
+		//case playerRandomAI:
 
-	}
-}
+	//}
+//}
 
 func zombieLocation(n int) (int, int) {
 	switch n {
@@ -496,7 +496,10 @@ func main() {
 				killPlayer()
 			}
 		}
-		//We need some additional logic here to determine
-		//whether the player has won or lost the game
+		if (l1 == false && l2 == false && l3 == false && l4 == false && l5 == false) {
+			fmt.Println("You survived Zombiemania Mang!")
+			os.Exit(0)
+			//Player Wins!!!
+		}
 	}
 }
