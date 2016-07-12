@@ -12,6 +12,8 @@ func main() {
 	customerNumber[1] = 10
 	customerNumber[2] = 15
 
+	// The number in the brackets is referred to as a index position
+
 	fmt.Println(customerNumber[0])
 	fmt.Println(customerNumber[1])
 	fmt.Println(customerNumber[2])

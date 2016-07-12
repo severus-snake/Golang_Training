@@ -14,6 +14,8 @@ func main() {
 		"Gutten morgen!",
 	}
 
+	// Slices need an ending comma??
+
 	for i, currentEntry := range greeting {
 		fmt.Println(i, currentEntry)
 	}
