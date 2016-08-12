@@ -23,7 +23,7 @@ func main() {
 			Last:  "Bond",
 			Age:   20,
 		},
-		First:         "Double Zero Seven",
+		First: "Double Zero Seven",
 		LicenseToKill: true,
 	}
 
@@ -33,11 +33,12 @@ func main() {
 			Last:  "MoneyPenny",
 			Age:   19,
 		},
-		First:         "If looks could kill",
+		First: "If looks could kill",
 		LicenseToKill: false,
 	}
 
 	// fields and methods of the inner-type are promoted to the outer-type
-	fmt.Println(p1.First, p1.person.First)
-	fmt.Println(p2.First, p2.person.First)
+	fmt.Println(p1.First, p1.person.First, p1.Last, "\n License to Kill =",
+		p1.LicenseToKill)
+	fmt.Println(p2.First, p2.person.First, p2.Last, "\n License to Kill =",p2.LicenseToKill)
 }
