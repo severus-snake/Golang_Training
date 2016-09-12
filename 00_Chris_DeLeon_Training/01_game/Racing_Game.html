@@ -43,17 +43,17 @@
 
         // cheat / hack to test ball in any position
         /*ballX = mouseX;
-        ballY = mouseY;
-        ballSpeedX = 4;
-        ballSpeedY = -4;
-        */
+         ballY = mouseY;
+         ballSpeedX = 4;
+         ballSpeedY = -4;
+         */
     }
 
     function brickReset() {
         bricksLeft = 0;
         var i;
         for(i=0; i < 3 * BRICK_COLS; i++) {
-                brickGrid[i] = false;
+            brickGrid[i] = false;
         }
         for(;i < BRICK_COLS * BRICK_ROWS;i++){
             brickGrid[i] = true;
@@ -73,7 +73,7 @@
         brickReset();
         ballReset();
     }
-    
+
     function updateAll() {
         moveAll();
         drawAll();
@@ -210,7 +210,7 @@
         colorCircle(ballX,ballY, 10, 'white'); // draw ball
 
         colorRect(paddleX, canvas.height-PADDLE_DIST_FROM_EDGE, PADDLE_WIDTH,PADDLE_THICKNESS,
-            'white');
+                'white');
 
         drawBricks();
 
@@ -220,9 +220,9 @@
     function colorRect(topLeftX,topLeftY, boxWidth,boxHeight, fillColor) {
         canvasContext.fillStyle = fillColor;
         canvasContext.fillRect(topLeftX,topLeftY, boxWidth,boxHeight,
-            fillColor);
+                fillColor);
     }
-    
+
     function colorCircle(centerX,centerY, radius, fillColor) {
         canvasContext.fillStyle = fillColor;
         canvasContext.beginPath();
