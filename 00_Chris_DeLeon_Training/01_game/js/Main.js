@@ -26,15 +26,10 @@
 
     function moveAll() {
         carMove();
-
-        carTrackHandling()
-
+        carTrackHandling();
     }
 
     function drawAll() {
-
         drawTracks();
-
         carDraw();
-
     }
