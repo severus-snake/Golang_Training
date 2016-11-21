@@ -10,6 +10,7 @@ function carClass(){
     this.ang = 0;
     this.speed = 0;
     this.myCarPic; //which picture to use for each car
+    this.name = "Untitled Car";
 
     this.keyHeld_Gas = false;
     this.keyHeld_Reverse = false;
@@ -28,8 +29,10 @@ function carClass(){
         this.controlKeyLeft = leftKey;
     }
 
-    this.reset = function(whichImage) {
+    this.reset = function(whichImage, carName) {
+        this.name = carName;
         this.myCarPic = whichImage;
+        this.speed = 0;
 
         for (var eachRow = 0; eachRow < TRACK_ROWS; eachRow++) {
             for (var eachCol = 0; eachCol < TRACK_COLS; eachCol++) {
@@ -38,13 +41,14 @@ function carClass(){
 
                 if (trackGrid[arrayIndex] == TRACK_PLAYERSTART) {
                     trackGrid[arrayIndex] = TRACK_ROAD;
-                    this.ang = -Math.PI / 2;
-                    this.x = eachCol * TRACK_W;
-                    this.y = eachRow * TRACK_H;
+                    this.ang = -Math.PI/2;
+                    this.x = eachCol * TRACK_W + TRACK_W/2;
+                    this.y = eachRow * TRACK_H + TRACK_H/2;
                     return;
                 } // end of player start if
             } // end of col for
         } // end of row for
+        console.log("NO PLAYER START FOUND!")
     } // end of carReset func
 
     this.move = function() {
