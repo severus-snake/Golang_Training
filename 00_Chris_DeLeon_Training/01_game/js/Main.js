@@ -1,7 +1,6 @@
     var canvas, canvasContext;
 
-    var blueCar = new carClass();
-    var greenCar = new carClass();
+    var blueWarrior = new warriorClass();
 
     window.onload = function() {
         canvas = document.getElementById('gameCanvas');
@@ -24,9 +23,8 @@
     }
 
     function loadLevel(whichLevel) {
-        trackGrid = whichLevel.slice();
-        greenCar.reset(otherCarPic, "Green Machine");
-        blueCar.reset(carPic, "Blue Storm");
+        worldGrid = whichLevel.slice();
+        blueWarrior.reset(warriorPic, "Blue Warrior");
     }
 
     function updateAll() {
@@ -35,13 +33,26 @@
     }
 
     function moveAll() {
-        greenCar.move();
-        blueCar.move();
+        blueWarrior.move();
 
     }
 
     function drawAll() {
-        drawTracks();
-        greenCar.draw();
-        blueCar.draw();
+        drawWorld();
+        blueWarrior.draw();
     }
+
+    var myArray = ["Eric Andrade", "e_andrade_21@hotmail.com"];
+
+    var myData = {fullName: " ", skype: " ", github:" "};
+
+    function cutName(str){
+        var newArray;
+        newArray = str.split(" ");
+        console.log(newArray);
+        return newArray;
+    }
+    myData.fullName = cutName(myArray[0]);
+    myData.skype = myArray[1];
+    console.log(myData);
+

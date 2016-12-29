@@ -3,11 +3,6 @@ const KEY_UP_ARROW = 38;
 const KEY_RIGHT_ARROW = 39;
 const KEY_DOWN_ARROW = 40;
 
-const KEY_W = 87;
-const KEY_A = 65;
-const KEY_S = 83;
-const KEY_D = 68;
-
 var mouseX = 0;
 var mouseY = 0;
 
@@ -17,8 +12,7 @@ function setupInput () {
     document.addEventListener('keydown', keyPressed);
     document.addEventListener('keyup', keyReleased);
 
-    greenCar.setupInput(KEY_W, KEY_D, KEY_S, KEY_A);
-    blueCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
+    blueWarrior.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
 }
 
 function updateMousePos(evt) {
@@ -37,28 +31,29 @@ function updateMousePos(evt) {
      */
 }
 
-function keySet(evt,whichCar, setTo){
-    if(evt.keyCode == whichCar.controlKeyLeft){
-        whichCar.keyHeld_TurnLeft = setTo;
+function keySet(keyEvent, setTo){
+    if(keyEvent.keyCode == blueWarrior.controlKeyLeft){
+        blueWarrior.keyHeld_West = setTo;
     }
-    if(evt.keyCode == whichCar.controlKeyRight){
-        whichCar.keyHeld_TurnRight = setTo;
+    if(keyEvent.keyCode == blueWarrior.controlKeyRight){
+        blueWarrior.keyHeld_East = setTo;
     }
-    if(evt.keyCode == whichCar.controlKeyUp){
-        whichCar.keyHeld_Gas = setTo;
+    if(keyEvent.keyCode == blueWarrior.controlKeyUp){
+        blueWarrior.keyHeld_North = setTo;
     }
-    if(evt.keyCode == whichCar.controlKeyDown){
-        whichCar.keyHeld_Reverse = setTo;
+    if(keyEvent.keyCode == blueWarrior.controlKeyDown){
+        blueWarrior.keyHeld_South = setTo;
     }
 }
 
 function keyPressed(evt){
-    // console.log("Key Pressed:" +evt.keyCode);
-    keySet(evt, greenCar, true);
-    keySet(evt, blueCar, true);
+    console.log("Key Pressed:" +evt.keyCode);
+    keySet(evt, true);
+
+    evt.preventDefault();
 }
 
 function keyReleased(evt){
-    keySet(evt, greenCar, false);
-    keySet(evt, blueCar, false);
+    console.log("Key Pressed:" +evt.keyCode);
+    keySet(evt, false);
 }
