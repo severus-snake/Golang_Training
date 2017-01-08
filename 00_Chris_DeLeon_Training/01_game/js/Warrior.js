@@ -23,8 +23,8 @@ function warriorClass(){
         this.controlKeyLeft = leftKey;
     }
 
-    this.reset = function(whichImage, carName) {
-        this.name = carName;
+    this.reset = function(whichImage, warriorName) {
+        this.name = warriorName;
         this.myWarriorPic = whichImage;
 
         for (var eachRow = 0; eachRow < WORLD_ROWS; eachRow++) {
@@ -34,7 +34,6 @@ function warriorClass(){
 
                 if (worldGrid[arrayIndex] == WORLD_PLAYERSTART) {
                     worldGrid[arrayIndex] = WORLD_ROAD;
-                    this.ang = -Math.PI/2;
                     this.x = eachCol * WORLD_W + WORLD_W/2;
                     this.y = eachRow * WORLD_H + WORLD_H/2;
                     return;
@@ -62,6 +61,7 @@ function warriorClass(){
         }
 
         var walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
+
         if(walkIntoTileIndex == WORLD_GOAL){
             console.log(this.name + " WINS!");
             loadLevel(levelOne);

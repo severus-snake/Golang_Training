@@ -6,7 +6,7 @@
         canvas = document.getElementById('gameCanvas');
         canvasContext = canvas.getContext('2d');
 
-        colorRect(0,0, canvas.width, canvas.height, 'black');
+        colorRect(0,0, canvas.width, canvas.height, 'white');
         colorText("LOADING IMAGES", canvas.width/2, canvas.height/2, 'white');
 
         loadImages();
@@ -41,18 +41,4 @@
         drawWorld();
         blueWarrior.draw();
     }
-
-    var myArray = ["Eric Andrade", "e_andrade_21@hotmail.com"];
-
-    var myData = {fullName: " ", skype: " ", github:" "};
-
-    function cutName(str){
-        var newArray;
-        newArray = str.split(" ");
-        console.log(newArray);
-        return newArray;
-    }
-    myData.fullName = cutName(myArray[0]);
-    myData.skype = myArray[1];
-    console.log(myData);
 
